@@ -1,0 +1,15 @@
+[submodule "apigee-graphql-demo-server"]
+	path = apigee-graphql-demo-server
+	url = git@github.com:micovery/apigee-graphql-demo-server.git
+[submodule "apigee-graphql-demo-proxy"]
+	path = apigee-graphql-demo-proxy
+	url = git@github.com:micovery/apigee-graphql-demo-proxy.git
+[submodule "apigee-graphql-demo-oauth"]
+	path = apigee-graphql-demo-oauth
+	url = git@github.com:micovery/apigee-graphql-demo-oauth.git
+[submodule "apigee-graphql-demo-config"]
+	path = apigee-graphql-demo-config
+	url = git@github.com:micovery/apigee-graphql-demo-config.git
+[submodule "apigee-graphql-demo-portal"]
+	path = apigee-graphql-demo-portal
+	url = git@github.com:micovery/apigee-graphql-demo-portal.git
