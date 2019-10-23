@@ -20,11 +20,19 @@ if [ -z "$APIGEE_PASSWORD" ] ; then
   exit 1;
 fi
 
+# Assumes you already have a test environment in your organization
+APIGEE_ENV=${APIGEE_ENV:-test}
+APIGEE_HOSTURL=${APIGEE_HOSTURL:-}
+
+#
+APIGEE_HOSTURL=${APIGEE_HOSTURL:-http://}
 
 docker build \
-      --build-arg CACHEBUST=$(date +%s) \
+      --build-arg "CACHE_BUST=$(date +%s)" \
       --build-arg "TARGET_BACKEND=${TARGET_BACKEND}" \
       --build-arg "APIGEE_ORG=${APIGEE_ORG}" \
+      --build-arg "APIGEE_ENV=${APIGEE_ENV}" \
+      --build-arg "APIGEE_HOSTURL=${APIGEE_HOSTURL}" \
       --build-arg "APIGEE_USERNAME=${APIGEE_USERNAME}" \
       --build-arg "APIGEE_PASSWORD=${APIGEE_PASSWORD}" \
       -t apigee-graphql-demo-build \
