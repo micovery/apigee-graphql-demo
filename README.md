@@ -54,12 +54,16 @@ script and deploy all these components in one shot. To do this, follow the instr
     $ export TARGET_BACKEND=https://your.backend.serveo.com/graphql
     $ export APIGEE_USERNAME=username@examle.com
     $ export APIGEE_PASSWORD=SuperSecret#123
-    $ export APIGEE_ORG=your-apigee-org
+    $ export APIGEE_ORG=your-apigee-org    
+    $ export APIGEE_ENV=test
     ```
 
    ```bash
    $ ./build.sh
    ```
+   
+Note, if you are using Apigee OnPrem Deployment Kit (OPDK), you must also set "APIGEE_HOSTURL" 
+environment variable to point to the Apigee Management Server API endpoint.
  
 After the build is complete, you should have two new proxies (`graphq-proxy`, `graphql-server`) in your Apigee Edge org.
 

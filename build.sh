@@ -10,6 +10,11 @@ if [ -z "$APIGEE_ORG" ] ; then
   exit 1;
 fi
 
+if [ -z "$APIGEE_ENV" ] ; then
+  echo "ERROR: \$APIGEE_ENV environment variable is required" ;
+  exit 1;
+fi
+
 if [ -z "$APIGEE_USERNAME" ] ; then \
   echo "ERROR: \$APIGEE_USERNAME environment variable is required" ;
   exit 1;
@@ -20,12 +25,7 @@ if [ -z "$APIGEE_PASSWORD" ] ; then
   exit 1;
 fi
 
-# Assumes you already have a test environment in your organization
-APIGEE_ENV=${APIGEE_ENV:-test}
 APIGEE_HOSTURL=${APIGEE_HOSTURL:-}
-
-#
-APIGEE_HOSTURL=${APIGEE_HOSTURL:-http://}
 
 docker build \
       --build-arg "CACHE_BUST=$(date +%s)" \
